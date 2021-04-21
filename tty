@@ -1,0 +1,35 @@
+#!/bin/bash
+set -x
+USER=""
+PASSWD=""
+ENABLE=""
+LOG="telnet.log"
+HOSTS="
+# 10.144.33.196 
+172.11.11.11 
+172.22.22.22
+"
+
+for H in $HOSTS
+do
+echo START SCRIPT: >> $LOG
+date +%x-%R >> $LOG
+(
+sleep 1;
+echo -en "$USER\r";
+sleep 2;
+echo -en "$PASSWD\r";
+sleep 2;
+echo -en "enable\r";
+sleep 2;
+echo -en "$ENABLE\r";
+sleep 2;
+echo -en "show version | include BOOT\r";
+sleep 2;
+echo -en "exit\r"
+sleep 1;
+
+
+) | telnet $H >> $LOG
+echo =================================== >> $LOG
+done

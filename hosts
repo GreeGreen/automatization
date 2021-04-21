@@ -1,0 +1,14 @@
+[switches_group1]
+#2960
+xxx.xxx.xxx.xxx ansible_user=###### ansible_password=###### ansible_network_os=ios ansible_become_password=##### ansible_become=yes ansible_become_method=enable
+
+[switches_group2]
+#6506
+xxx.xxx.xxx.xxx ansible_user=###### ansible_password=###### ansible_network_os=ios ansible_become_password=##### ansible_become=yes ansible_become_method=enable
+
+[routers]
+#29xx
+xxx.xxx.xxx.xxx ansible_user=###### ansible_password=###### ansible_network_os=ios ansible_become_password=###### ansible_become=yes ansible_become_method=enable
+
+[hostsnosshnoenable]
+xxx.xxx.xxx.xxx ansible_user=###### ansible_password=######

@@ -1,0 +1,13 @@
+---
+- name: First Play
+  hosts: switches
+  gather_facts: False
+  connection: ansible.netcommon.network_cli
+  tasks:
+   - name: config hostname 
+     cisco.ios.ios_config:
+         lines: hostname 2960_kab201
+     register: version
+   - name: Second Task
+     debug: 
+       var: version

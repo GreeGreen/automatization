@@ -1,0 +1,13 @@
+---
+- name: First Play
+  hosts: alldevices 
+  gather_facts: False
+  connection: ansible.netcommon.network_cli 
+  tasks:
+   - name: First Task
+     cisco.ios.ios_command:
+         commands: show run | include hostname 
+     register: run 
+   - name: Second Task
+     debug: 
+       var: run
